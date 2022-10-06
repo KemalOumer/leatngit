@@ -156,11 +156,4 @@ for(i in 1:7){
 grid.arrange(grobs = g, ncol = 4)
 
 
-## ------------------------------------------------------------------------
-library(tidyr)
-range <- range(c(0, results$Est), na.rm = TRUE)
-results.wide <- spread(results[, c(1,2,3,6)], type, Est) 
-results.wide$Direct[is.na(results.wide$Direct)] <- 0
 
-g1 <- ggplot(results.wide, aes(x = Direct, y = Smooth_Direct, color = region)) + geom_point(alpha = 0.5) + geom_abline(intercept = 0, slope = 1, color = "red") + xlim(range)+ ylim(range) + theme(legend.position = "none")
-grid.arrange(g1, ncol = 2)

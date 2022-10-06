@@ -1,0 +1,3 @@
+# github for beginner#
+how to create git repository and local repository
+ 
